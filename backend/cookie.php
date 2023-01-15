@@ -1,0 +1,1 @@
+<?php setcookie("user", "", 86400, "/");
