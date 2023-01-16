@@ -1,6 +1,6 @@
 <?php
 include 'navbar.php';?>
-<html>
+<html data-bs-theme="dark">
     <head>
         <title>New post</title>
     </head>
@@ -17,3 +17,22 @@ include 'navbar.php';?>
         </div>
     </form>
 </html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    if (isset($_POST['title']) !== true)
+        echo "Please add a title";
+    else if (isset($_POST['text']) !== true)
+        echo "Text box can't be empty";
+    else{
+        include "backend/post_handler.php";
+        switch(post_handler($_POST['title'], $_POST['text'])){
+            case 1 : {
+                echo "Post created";
+                break;
+            }
+            case 0 :
+                echo "Error, post was not created";
+                break;
+        }
+    }
+}

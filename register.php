@@ -1,5 +1,5 @@
-<html>
-    <?php include 'navbar.php'; ?>
+<?php include 'navbar.php'; ?>
+<html data-bs-theme="dark">
     <head>
         <title>Sign up</title>
     </head>
@@ -39,17 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     else {
         include 'backend/register_handler.php';
         switch(register_handler($_POST['email'], $_POST['username'], $_POST['password'])){
-        case 0 :
-            echo "Error: Sign up failed";
+            case 0 :
+                echo "Error: Sign up failed";
+                break;
+            case 1 :{
+                header('Location:index.php');
+                echo "Registration complete";
+            }
             break;
-        case 1 :{
-            header('Location:index.php');
-            echo "Registration complete";
-        }
-        break;
-        case 2 :
-            echo "Username or email already taken";
-            break;
+            case 2 :
+                echo "Username or email already taken";
+                break;
         }
     }
 }

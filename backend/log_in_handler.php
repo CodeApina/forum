@@ -1,6 +1,4 @@
 <?php
-include 'session.php';
-include 'sql.php';
 
 function log_in_handler($email, $password, $remember_me){
     global $conn;
@@ -9,15 +7,14 @@ function log_in_handler($email, $password, $remember_me){
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
-
-    $row = $result->fetch_assoc();
-    $salt = $row['salt'];
-    $username = $row['username'];
+    $rows = $result->fetch_assoc();
+    $salt = $rows['salt'];
+    $username = $rows['username'];
 
     $hash_password = hash("sha256", $password.$salt, false);
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE password=?");
-    $stmt->bind_param("s", $hash_password);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE password=? AND email=?");
+    $stmt->bind_param("ss", $hash_password, $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -25,16 +22,17 @@ function log_in_handler($email, $password, $remember_me){
         $_SESSION['logged_in'] = true;
         $_SESSION['username'] = $username;
         if ($remember_me === "on"){
-            $stmt = $conn->prepare("SELECT uid FROM users WHERE password=?");
+            $stmt = $conn->prepare("SELECT id FROM users WHERE password=?");
             $stmt->bind_param("s", $hash_password);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $uid = $row['uid'];
-            setcookie("uid", "$uid", time() + (86400 * 30), "/");
+            $uid = $row['id'];
+            setcookie("user_id", "$uid", time() + (86400 * 30), "/");
         }
+        return 0;
+    }
+    else{
         return 1;
     }
-    else
-        return 0;
 }

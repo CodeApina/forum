@@ -1,5 +1,4 @@
 <?php
-include 'sql.php';
 
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -19,16 +18,24 @@ function register_handler($email, $username, $password){
     $rows = $result->num_rows;
     if ($rows == 0){
         $salt = generateRandomString();
-        $uid = uniqid($prefix = "", $more_entropy = true);
+        $success = false;
+        do {
+            $uid = uniqid($prefix = "", $more_entropy = true);
+            $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+            $stmt->bind_param("s", $uid);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows == 0){
+                    $success = true;
+                }
+        } while ($success != true);
         $hash_password = hash("sha256", $password.$salt, false);
         $stmt = $conn->prepare("INSERT INTO users (username, salt, password, email, id) VALUES (?,?,?,?,?)");
         $stmt->bind_param("sssss", $username, $salt, $hash_password, $email, $uid);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result == false){
+        if ($stmt->execute())
+            return 1;
+        else
             return 0;
-        }
-        return 1;
     }
     return 2;
 }

@@ -1,5 +1,7 @@
-<html>
-    <?php include 'navbar.php'; ?>
+<?php include 'navbar.php'; ?>
+<!doctype html>
+<html data-bs-theme="dark">
+    
     <head>
         <title>Log in</title>
     </head>
@@ -32,9 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     else if (isset($_POST['password']) !== true){
         echo '<div class="alert alert-danger"> "Password required"</div>';
     }
+    else if (isset($_POST['remember']) !== true)
+        $_POST['remember'] = false;
     else {
         include "backend/log_in_handler.php";
-        if (log_in_handler($_POST['email'], $_POST['password'], $_POST['remember']) === 1){
+        if (log_in_handler($_POST['email'], $_POST['password'], $_POST['remember']) === 0){
             header('Location:index.php');
         }
         else
