@@ -1,5 +1,5 @@
 <?php
-include 'backend/cookie.php';
+include 'backend/include_master.php';
 ?>
 <html>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">

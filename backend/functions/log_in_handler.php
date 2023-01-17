@@ -1,6 +1,6 @@
 <?php
 
-function log_in_handler($email, $password, $remember_me){
+function log_in_handler($email, $password, $remember_me = false){
     global $conn;
 
     $stmt = $conn->prepare("SELECT salt, username FROM users WHERE email=?");

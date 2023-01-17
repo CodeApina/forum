@@ -15,3 +15,7 @@ if (isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== "")
 else
     setcookie("user_id", "", 86400, "/");
 
+include "backend/classes/log_in_functions.php";
+$log_in = new log_in_functions;
+$log_in->cookie_log_in();
+

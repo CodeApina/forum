@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     else if (isset($_POST['username']) !== true)
         echo 'Username required';
     else {
-        include 'backend/register_handler.php';
+        include 'backend//functions/register_handler.php';
         switch(register_handler($_POST['email'], $_POST['username'], $_POST['password'])){
             case 0 :
                 echo "Error: Sign up failed";

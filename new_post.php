@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     else if (isset($_POST['text']) !== true)
         echo "Text box can't be empty";
     else{
-        include "backend/post_handler.php";
+        include "backend/functions/post_handler.php";
         switch(post_handler($_POST['title'], $_POST['text'])){
             case 1 : {
                 echo "Post created";
