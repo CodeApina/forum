@@ -115,8 +115,21 @@ include 'backend/include_master.php';
                                 <p>Allow cookies?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="button-primary">Yes</button>
-                                <button type="button" class="button-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="button-primary" id="yes_cookie">Yes</button>
+                                <button type="button" class="button-secondary" data-dismiss="modal" id="no_cookie">Close</button>
+                                <script>
+
+                                    var yes_cookies_button = document.getElementById("yes_cookie");
+                                    var no_cookies_button = document.getElementById("no_cookie");
+
+                                    yes_cookies_button.onclick = function(){
+                                        <?php $_SESSION['cookies_allowed'] = true ?>
+                                    }
+                                    no_cookies_button.onclick = function(){
+                                        <?php $_SESSION['cookies_allowed'] = false ?>
+                                    }
+
+                                </script>
                             </div>
                         </div> 
                     </div>
