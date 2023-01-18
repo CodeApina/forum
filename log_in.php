@@ -17,9 +17,17 @@
                 <br>
                 <input type="password" class="form_control" id="password" placeholder="Enter password" name="password">
             </div>
-            <div class="container-fluid form-check mb-3">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember">Keep me logged in</label>
+            <?php switch ($_SESSION['cookies_allowed']){
+                case true :{?>
+                            <div class="container-fluid form-check mb-3">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember">Keep me logged in</label>
+                            </div>
+                    <?php }
+                case false :{
+
+                } 
+            }?>
             <div class="container-fluid">
                 <button type="submit" class="btn btn-secondary">Submit</button>
             </div>

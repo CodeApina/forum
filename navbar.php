@@ -102,4 +102,30 @@ include 'backend/include_master.php';
                 </ul>
             </div>
         </nav>
+        <?php 
+        switch (isset($_SESSION['cookies_allowed'])){
+            case false:{?>
+                <div class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-title">
+                                <h5 class="modal-title">Allow cookies?</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>Allow cookies?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="button-primary">Yes</button>
+                                <button type="button" class="button-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+        <?php 
+                break;
+            }
+            case true:{
+
+            }
+        }?>
 </html>
