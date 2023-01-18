@@ -43,6 +43,25 @@ class log_in_functions extends sql{
         }
     }
     function cookie_log_in(){
-        
+        if (isset($_COOKIE["user_id"])){
+            if ($_COOKIE["user_id"] == "" || $_COOKIE["user_id"] == null){
+                return 0;
+            }
+            else
+            {
+                $stmt = $this->conn->prepare("SELECT username FROM $this->table WHERE id=?");
+                $stmt->bind_param("s", $_COOKIE["user_id"]);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                $username = $row['username'];
+                $_SESSION['username'] = $username;
+                $_SESSION['logged_in'] = true;
+                return 1;
+            }
+        }
+        else {
+            return 0;
+        }
     }
 }
