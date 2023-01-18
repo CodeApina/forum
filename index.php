@@ -16,7 +16,7 @@ include 'navbar.php';?>
             <?php
             $post = new post();
             $posts = $post->get_all_posts();
-            foreach ($posts as $cuttenr_post){
+            foreach ($posts as $current_post){
                 ?>
                 <div class="card mb-4 bg-secondary text-light">
                     <div class="card-body justify-content-center">

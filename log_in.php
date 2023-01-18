@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $_POST['remember'] = false;
     else {
         include "backend/classes/log_in_functions.php";
- 
         $function = new log_in_functions();
         if ($function->log_in_handler($_POST['email'], $_POST['password'], $_POST['remember']) === 0){
             header('Location:index.php');
