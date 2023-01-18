@@ -1,6 +1,6 @@
 <?php
 include "include_master.php";
-if (isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== "")
+if (isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== "" && $_COOKIE["user_id"] !== null)
 {
     $_SESSION['logged_in'] = true;
     $stmt = $conn->prepare("SELECT username FROM users WHERE id=?");
@@ -11,6 +11,8 @@ if (isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== "")
     $username = $row['username'];
     $_SESSION['username'] = $username;
     $_SESSION['uid'] = $_COOKIE['user_id'];
+    $id = $_COOKIE['user_id'];
+    setcookie("user_id", "$id", 86400, "/");
 }
 else
     setcookie("user_id", "", 86400, "/");
