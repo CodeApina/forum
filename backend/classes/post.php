@@ -1,5 +1,5 @@
 <?php
-include "/backend/classes/sql.php";
+include "backend/classes/sql.php";
 class post extends sql{
     public $user;
     public $post_id;
