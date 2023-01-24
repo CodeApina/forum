@@ -21,8 +21,7 @@ class post extends sql{
         return $result;
     }
     function get_all_posts(){
-        global $conn;
-        $stmt = $conn->prepare("SELECT * FROM $this->table");
+        $stmt = $this->conn->prepare("SELECT * FROM $this->table");
         $stmt->execute();
         $results = $stmt->get_result();
         return $results;
