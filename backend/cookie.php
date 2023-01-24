@@ -18,7 +18,6 @@ if (isset($_SESSION["cookies_allowed"]) && $_SESSION["cookies_allowed"] == true)
     else
         setcookie("user_id", "", 86400, "/");
 }
-include "backend/classes/log_in_functions.php";
 $log_in = new log_in_functions;
 $log_in->cookie_log_in();
 
