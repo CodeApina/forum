@@ -4,7 +4,7 @@ class log_in_functions extends sql{
 
      protected $table = "users";
 
-    function init($id, $conn)
+    function init($conn)
     {
         $this->conn = $conn;
     }
