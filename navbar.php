@@ -1,4 +1,5 @@
 <?php
+include 'backend/bootstrap.php';
 include 'backend/include_master.php';
 if (!isset($_SESSION["cookies_allowed"]))
     $_SESSION["cookies_allowed"] = false;
