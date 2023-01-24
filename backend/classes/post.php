@@ -14,7 +14,7 @@ class post extends sql{
 
     function get_post($id){
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM $this->table WHERE id=?");
+        $stmt = $conn->prepare("SELECT * FROM $this->table");
         $stmt->bind_param("s", $id);
         $stmt->execute();
         $result = $stmt->get_result();
