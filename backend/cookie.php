@@ -1,5 +1,4 @@
 <?php
-include "include_master.php";
 if ($_SESSION["cookies_allowed"] == true){
     if (isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== "" && $_COOKIE["user_id"] !== null)
     {
