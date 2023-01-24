@@ -31,7 +31,7 @@ if (!isset($_SESSION["cookies_allowed"]))
                             <?php
                             break;
                         }
-                    switch (isset($_SESSION['logged_in']) || $_COOKIE["user_id"] !== ""){
+                    switch (isset($_SESSION['logged_in']) || isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== ""){
                         case true;
                             switch($_SESSION['logged_in']){
                                 case true:?>
