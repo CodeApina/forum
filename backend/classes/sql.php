@@ -8,6 +8,6 @@ class sql{
     {
         $this->conn = new mysqli("localhost:3306","root","PerkelePaska69","forum");
 
-        $this->init();
+        $this->init($this->conn);
     }
 }
