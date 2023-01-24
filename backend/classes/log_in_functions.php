@@ -1,5 +1,4 @@
 <?php
-include "backend/classes/sql.php";
 class log_in_functions extends sql{
 
      protected $table = "users";

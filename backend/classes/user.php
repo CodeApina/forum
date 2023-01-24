@@ -1,5 +1,4 @@
 <?php
-include "backend/sql.php";
 class user extends sql{
     public $username;
     public $user_id;

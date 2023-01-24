@@ -14,7 +14,6 @@ include 'navbar.php';?>
         <div>
             
             <?php
-            include "backend/classes/post.php";
             $post = new post();
             $posts = $post->get_all_posts();
             foreach ($posts as $current_post){
