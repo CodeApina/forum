@@ -6,7 +6,7 @@ class sql{
 
     function __construct()
     {
-        $this->conn = new mysqli("localhost:3306","root","root","forum");
+        $this->conn = new mysqli("localhost:3306","root","PerkelePaska69","forum");
 
         $this->init();
     }
