@@ -2,7 +2,7 @@
 include "backend/classes/sql.php";
 class log_in_functions extends sql{
 
-    private $table = "users";
+     protected $table = "users";
 
     function init($id, $conn)
     {

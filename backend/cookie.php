@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION["cookies_allowed"] == true){
+if (isset($_SESSION["cookies_allowed"]) && $_SESSION["cookies_allowed"] == true){
     if (isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== "" && $_COOKIE["user_id"] !== null)
     {
         // TODO: https://stackoverflow.com/questions/1354999/keep-me-logged-in-the-best-approach

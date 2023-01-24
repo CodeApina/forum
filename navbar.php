@@ -1,5 +1,7 @@
 <?php
 include 'backend/include_master.php';
+if (!isset($_SESSION["cookies_allowed"]))
+    $_SESSION["cookies_allowed"] = false;
 ?>
 <html>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
