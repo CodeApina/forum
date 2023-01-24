@@ -18,7 +18,6 @@ include 'navbar.php';?>
                 }).then(function(posts){
                     console.log(posts);
                 })
-                document.write()
             </script>
             <!-- <div class="card mb-4 bg-secondary text-light">
                 <div class="card-body justify-content-center"></div>
