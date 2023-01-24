@@ -1,4 +1,5 @@
 <?php
+include "/backend/classes/sql.php";
 class post extends sql{
     public $user;
     public $post_id;
@@ -7,6 +8,10 @@ class post extends sql{
     public $creation_time;
 
     protected $table = "posts";
+    function init($conn)
+    {
+        $this->conn = $conn;
+    }
 
     function get_post($id){
         global $conn;
