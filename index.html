@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="backend/stylesheet.css">
+    </head>
+    <body>
+        <div id="nav">
+
+        </div>
+    </body>
+    <script>
+        var navbar = document.getElementById("nav")
+        fetch("navbar.html")
+        .then(response=> response.text())
+        .then(text=> document.getElementById("nav").innerHTML = text)
+    </script>
+</html>
