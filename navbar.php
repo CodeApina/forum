@@ -35,7 +35,7 @@ if (!isset($_SESSION["cookies_allowed"]))
                         case true;
                             switch($_SESSION['logged_in']){
                                 case true:?>
-                                    <ul class="navbar-nav ml-auto">
+                                    <ul class="navbar-nav dropdown-menu-lg-end">
                                         <li class="nav-item dropdown me-auto">
                                             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['username']?></button>
                                             <div class="dropdown-menu dropdown-meny-end dropdown-menu-dark">
