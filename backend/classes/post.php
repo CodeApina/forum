@@ -24,9 +24,13 @@ class post extends sql{
         $stmt = $this->conn->prepare("SELECT * FROM $this->table");
         $stmt->execute();
         $results = $stmt->get_result();
-        $alldata = array();
         while ($row = $results->fetch_assoc()){
-            $alldata += $row;
+            $alldata[] = array(
+                    "title" => $row["title"],
+                    "content" => $row["content"],
+                    "user" => $row["user"],
+                    "likes" => $row["likes"]
+                );
         }
         return $alldata;
     }

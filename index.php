@@ -37,7 +37,7 @@ include 'navbar.php';?>
                     return response.json();
                 }).then(function(posts){
                     var html = '';
-                    posts.forEach((post){
+                    posts.forEach((post)=>{
                         html += '<div class="card mb-4 bg-secondary text-light">' +
                                     '<div class="card-body justify-content-center">' +
                                         '<div class="d-flex justify-content-start">' +
