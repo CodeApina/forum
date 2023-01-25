@@ -15,9 +15,6 @@ if (!isset($_SESSION["cookies_allowed"]))
                     <li class="nav-item">
                         <a class="nav-link" href="faq.php">FAQ</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="log_out.php">Log out</a>
-                    </li>
                     <?php
                     switch (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                         case true :?>
@@ -40,7 +37,10 @@ if (!isset($_SESSION["cookies_allowed"]))
                                 case true:?>
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item dropdown me-auto">
-                                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['username']?></button>
+                                            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['username']?></button>
+                                            <div class="dropdown-menu dropdown-meny-end dropdown-menu-dark">
+                                                <a class="dropdown-item" href="log_out.php">Log out</a>
+                                            </div>
                                         </li>
                                     </ul>
                                     <?php
