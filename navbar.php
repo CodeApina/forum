@@ -48,10 +48,10 @@ if (!isset($_SESSION["cookies_allowed"]))
                                         <span>
                                             <li class="nav-item dropdown me-auto">
                                                 <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Guest</button>
-                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                                                     <a class="dropdown-item" href="log_in.php">Log in</a>
                                                     <a class="dropdown-item" href="register.php">Register</a>
-                                                </ul>
+                                                </div>
                                             </li>
                                         </span>
                                     </ul>
@@ -62,10 +62,10 @@ if (!isset($_SESSION["cookies_allowed"]))
                                         <span>
                                             <li class="nav-item dropdown me-auto">
                                                 <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Guest</button>
-                                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                                                     <a class="dropdown-item" href="log_in.php">Log in</a>
                                                     <a class="dropdown-item" href="register.php">Register</a>
-                                                </ul>
+                                                </div>
                                             </li>
                                         </span>
                                     </ul><?php
@@ -76,10 +76,10 @@ if (!isset($_SESSION["cookies_allowed"]))
                                 <span>
                                     <li class="nav-item dropdown me-auto">
                                         <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Guest</button>
-                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                                             <a class="dropdown-item" href="log_in.php">Log in</a>
                                             <a class="dropdown-item" href="register.php">Register</a>
-                                        </ul>
+                                        </div>
                                     </li>
                                 </span>
                             </ul>
@@ -91,10 +91,10 @@ if (!isset($_SESSION["cookies_allowed"]))
                                 <span>
                                     <li class="nav-item dropdown me-auto">
                                         <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Guest</button>
-                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                                             <a class="dropdown-item" href="log_in.php">Log in</a>
                                             <a class="dropdown-item" href="register.php">Register</a>
-                                        </ul>
+                                        </div>
                                     </li>
                                 </span>
                             </ul>
