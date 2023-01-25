@@ -36,6 +36,7 @@ class log_in_functions extends sql{
                 $uid = $row['id'];
                 setcookie("user_id", "$uid", time() + (86400 * 30), "/");
             }
+            
             return 0;
         }
         else{
