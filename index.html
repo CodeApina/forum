@@ -9,8 +9,9 @@
         </div>
     </body>
     <script>
-        $(function(){
-            $("#nav").load("navbar.html");
-        });
+        var navbar = document.getElementById("nav")
+        fetch("navbar.html")
+        .then(response=> response.text())
+        .then(text=> document.getElementById("nav").innerHTML = text)
     </script>
 </html>
