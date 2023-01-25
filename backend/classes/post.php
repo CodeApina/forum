@@ -25,12 +25,13 @@ class post extends sql{
         $stmt->execute();
         $results = $stmt->get_result();
         while ($row = $results->fetch_assoc()){
-            $alldata[] = array(
-                    "title" => $row["title"],
-                    "content" => $row["content"],
-                    "user" => $row["user"],
-                    "likes" => $row["likes"]
-                );
+            $alldata[] = $row;
+            //$alldata[] = array(
+            //        "title" => $row["title"],
+            //        "content" => $row["content"],
+            //        "user" => $row["user"],
+            //        "likes" => $row["likes"]
+            //    );
         }
         return $alldata;
     }
