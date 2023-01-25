@@ -2,6 +2,15 @@
     <head>
         <title>Home</title>
         <link rel="stylesheet" href="backend/stylesheet.css">
-        <link rel="import" href="navbar.html">
     </head>
+    <script>
+        $.get("navbar.html", function(data){
+            $("#nav").replaceWith(data);
+        });
+    </script>
+    <body>
+        <div id="#nav">
+
+        </div>
+    </body>
 </html>
