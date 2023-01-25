@@ -27,6 +27,6 @@ class post extends sql{
         while ($row = $results->fetch_assoc()){
             $alldata = $row;
         }
-        return $results;
+        return $alldata;
     }
 }
