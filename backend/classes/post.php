@@ -36,12 +36,11 @@ class post extends sql{
         return $alldata;
     }
     function post_handler($title, $text){
-        global $conn;
         $username = $_SESSION['username'];
         $success = false;
         do {
             $id = uniqid($prefix = "", $more_entropy = true);
-            $stmt = $conn->prepare("SELECT * FROM posts WHERE id = ?");
+            $stmt = $this->conn->prepare("SELECT * FROM $this->table WHERE id = ?");
             $stmt->bind_param("s", $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -49,7 +48,7 @@ class post extends sql{
                     $success = true;
                 }
         } while ($success != true);
-        $stmt = $conn->prepare("INSERT INTO posts (id, title, content, user) VALUES (?,?,?,?)");
+        $stmt = $this->conn->prepare("INSERT INTO $this->table (id, title, content, user) VALUES (?,?,?,?)");
         $stmt->bind_param("ssss",$id, $title, $text, $username);
         if ($stmt->execute());
             return 1;
