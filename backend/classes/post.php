@@ -25,12 +25,7 @@ class post extends sql{
         $stmt->execute();
         $results = $stmt->get_result();
         while ($row = $results->fetch_assoc()){
-            $this->user = $row['user'];
-            $this->post_id = $row['id'];
-            $this->text = $row['text'];
-            $this->title = $row['content'];
-            $this->creation_time = $row['timestamp'];
-            $this->user = $row['user'];
+            $alldata = $row;
         }
         return $results;
     }
