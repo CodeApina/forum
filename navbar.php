@@ -8,30 +8,32 @@ if (!isset($_SESSION["cookies_allowed"]))
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <div class="container-fluid">
                 <ul class="navbar-nav">
-                    <li class="navbar-nav">
+
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="navbar-nav">
+                    <li class="nav-item">
                         <a class="nav-link" href="faq.php">FAQ</a>
                     </li>
-                    <li class="navbar-nav">
+                    <li class="nav-item">
                         <a class="nav-link" href="log_out.php">Log out</a>
                     </li>
                     <?php
                     switch (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                         case true :?>
-                            <li class="navbar-nav">
+                            <li class="nav-item">
                                 <a class="nav-link" href="new_post.php">Post</a>
                             </li>
                             <?php
                             break;
                         default : ?>
-                            <li class="navbar-nav">
+                            <li class="nav-item">
                                 <a class="nav-link" href="new_post.php">Post</a>
                             </li>
                             <?php
                             break;
-                        }
+                        }?>
+                </ul>  <?php
                     switch (isset($_SESSION['logged_in']) || isset($_COOKIE["user_id"]) && $_COOKIE["user_id"] !== ""){
                         case true;
                             switch($_SESSION['logged_in']){
