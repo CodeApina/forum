@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         echo "Text box can't be empty";
     else{
         $function = new post();
-        switch($functuon->post_handler($_POST['title'], $_POST['text'])){
+        switch($function->post_handler($_POST['title'], $_POST['text'])){
             case 1 : {
                 echo "Post created";
                 break;
