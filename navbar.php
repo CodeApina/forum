@@ -27,7 +27,7 @@ if (!isset($_SESSION["cookies_allowed"]))
                             break;
                         default : ?>
                             <li class="navbar-nav">
-                                <a class="nav-link disabled" href="new_post.php">Post</a>
+                                <a class="nav-link" href="new_post.php">Post</a>
                             </li>
                             <?php
                             break;

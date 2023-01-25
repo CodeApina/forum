@@ -24,8 +24,11 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember">Keep me logged in</label>
                             </div>
                     <?php }
-                case false :{
-
+                case false :{?>
+                    <div class="container-fluid form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember">Keep me logged in</label>
+                </div><?php
                 } 
             }?>
             <div class="container-fluid">
